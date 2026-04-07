@@ -9,25 +9,11 @@
 <!-- LIBS -->
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/cards.css">
 <link rel="stylesheet" href="css/modal.css">
-
-<style>
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
-              url('https://w.wallhaven.cc/full/7j/wallhaven-7jwrp3.jpg') center/cover no-repeat;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-}
-</style>
 
 </head>
 <body>
@@ -39,11 +25,9 @@
 
 <!-- HERO -->
 <section class="hero">
-  <h2 class="text-5xl">Welcome to Store Of DeadlyMC</h2>
+  <h2>Welcome to DeadlyMC</h2>
   <p>Best Minecraft Server Store</p>
-  <button onclick="scrollToSection('ranks')" class="mt-4 px-6 py-2 bg-red-600">
-    Shop Now
-  </button>
+  <button onclick="scrollToSection('ranks')">Shop Now</button>
 </section>
 
 <!-- RANKS -->
@@ -51,31 +35,10 @@
   <h2>Ranks</h2>
 
   <div class="card-container">
-
-    <div class="card">
-      <h3>Eternal</h3>
-      <p>₹149/month</p>
-      <button onclick="buy('Eternal')">Buy</button>
-    </div>
-
-    <div class="card">
-      <h3>Titan</h3>
-      <p>₹279/month</p>
-      <button onclick="buy('Titan')">Buy</button>
-    </div>
-
-    <div class="card">
-      <h3>Deadly</h3>
-      <p>₹379/month</p>
-      <button onclick="buy('Deadly')">Buy</button>
-    </div>
-
-    <div class="card highlight">
-      <h3>Deadly+</h3>
-      <p>₹699/month</p>
-      <button onclick="buy('Deadly+')">Buy</button>
-    </div>
-
+    <div class="card"><h3>Eternal</h3><p>₹149/month</p><button onclick="buy('Eternal')">Buy</button></div>
+    <div class="card"><h3>Titan</h3><p>₹279/month</p><button onclick="buy('Titan')">Buy</button></div>
+    <div class="card"><h3>Deadly</h3><p>₹379/month</p><button onclick="buy('Deadly')">Buy</button></div>
+    <div class="card highlight"><h3>Deadly+</h3><p>₹699/month</p><button onclick="buy('Deadly+')">Buy</button></div>
   </div>
 </section>
 
@@ -84,60 +47,26 @@
   <h2>Keys</h2>
 
   <div class="card-container">
-
-    <div class="card">
-      <h3>Epic Key x 4</h3>
-      <p>₹39</p>
-      <button onclick="buy('Epic Key')">Buy</button>
-    </div>
-
-    <div class="card">
-      <h3>Muffin Key x 4</h3>
-      <p>₹49</p>
-      <button onclick="buy('Muffin Key')">Buy</button>
-    </div>
-
-    <div class="card">
-      <h3>Cosmic Key x 4</h3>
-      <p>₹69</p>
-      <button onclick="buy('Cosmic Key')">Buy</button>
-    </div>
-
-    <div class="card">
-      <h3>Crimson Key x 4</h3>
-      <p>₹119</p>
-      <button onclick="buy('Crimson Key')">Buy</button>
-    </div>
-
+    <div class="card"><h3>Epic Key x4</h3><p>₹39</p><button onclick="buy('Epic Key')">Buy</button></div>
+    <div class="card"><h3>Muffin Key x4</h3><p>₹49</p><button onclick="buy('Muffin Key')">Buy</button></div>
+    <div class="card"><h3>Cosmic Key x4</h3><p>₹69</p><button onclick="buy('Cosmic Key')">Buy</button></div>
+    <div class="card"><h3>Crimson Key x4</h3><p>₹119</p><button onclick="buy('Crimson Key')">Buy</button></div>
   </div>
 </section>
 
 <!-- PAYMENT -->
-<section class="section text-center">
+<section class="section">
   <h2>💳 Pay</h2>
 
-  <img src="assets/payment-qr.png" width="200" style="margin:auto;">
+  <img src="assets/payment-qr.png" class="qr">
 
-  <br><br>
+  <button onclick="paymentDone()">I Have Paid</button>
+  <p id="payment-msg"></p>
 
-  <button onclick="paymentDone()" class="px-4 py-2 bg-green-600">
-    I Have Paid
-  </button>
-
-  <p id="payment-msg" style="margin-top:10px;"></p>
-
-  <br><br>
-
-  <!-- DISCORD -->
-  <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
-    
+  <div class="discord">
     <img src="https://img.freepik.com/premium-psd/social-media-day-png-highquality-transparent-icons-popular-apps_1093584-372.jpg"
-         width="60"
-         style="cursor:pointer;"
          onclick="openDiscord()">
-
     <p>Join Discord</p>
-
   </div>
 </section>
 
@@ -151,17 +80,6 @@
 </div>
 
 <script src="js/main.js"></script>
-
-<script>
-function paymentDone() {
-  document.getElementById("payment-msg").innerText =
-    "✅ Make ticket in Discord For Buy .";
-}
-
-function openDiscord() {
-  window.open("https://discord.gg/HDpkv4N4", "_blank");
-}
-</script>
 
 </body>
 </html>

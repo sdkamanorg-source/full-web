@@ -1,17 +1,55 @@
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* CARD */
+.card {
+  background: rgba(20,20,20,0.9);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.3s;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* FIX TEXT BREAK */
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+/* BUTTON (OLD STYLE) */
 .card button {
-  margin-top: 10px;
-  padding: 12px;
-  width: 100%;
-  border-radius: 8px;
+  padding: 8px 14px;
+  background: red;
   border: none;
   color: white;
-  font-weight: bold;
-  background: linear-gradient(90deg, #ff003c, #ff4d6d);
+  border-radius: 6px;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 .card button:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 15px rgba(255,0,60,0.7);
+  background: crimson;
+}
+
+/* HOVER */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(255,0,60,0.4);
+}
+
+/* BEST CARD */
+.highlight {
+  border: 2px solid gold;
+  box-shadow: 0 0 10px gold;
 }

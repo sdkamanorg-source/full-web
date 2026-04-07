@@ -6,11 +6,9 @@
 
 <title>DeadlyMC Store</title>
 
-<!-- LIBS -->
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 
-<!-- CSS -->
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/cards.css">
 <link rel="stylesheet" href="css/modal.css">
@@ -20,16 +18,17 @@
   position: relative;
   height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
               url('https://w.wallhaven.cc/full/7j/wallhaven-7jwrp3.jpg') center/cover no-repeat;
 }
 
-/* PARTICLES */
-#particles-js {
+#particles-js,
+#particles-ranks,
+#particles-keys {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -37,12 +36,12 @@
   left: 0;
 }
 
-.hero h2, .hero p, .hero button {
+.hero h2, .hero p, .hero button,
+.section h2, .card-container {
   position: relative;
   z-index: 2;
 }
 
-/* ANIMATION */
 .hero h2 {
   font-size: 50px;
   animation: fadeIn 2s ease;
@@ -57,76 +56,49 @@
 </head>
 <body>
 
-<!-- NAV -->
 <header class="flex justify-between p-4 bg-black">
   <h1 class="logo">DeadlyMC</h1>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-
   <div id="particles-js"></div>
 
   <h2>Welcome to DeadlyMC</h2>
   <p>Best Minecraft Server Store</p>
+
   <button onclick="scrollToSection('ranks')" class="mt-4 px-6 py-2 bg-red-600">
     Shop Now
   </button>
-
 </section>
 
 <!-- RANKS -->
 <section id="ranks" class="section">
+  <div id="particles-ranks"></div>
+
   <h2>Ranks</h2>
 
   <div class="card-container">
 
-    <div class="card highlight">
-      <h3>Deadly+</h3>
-      <p>₹699</p>
-      <button onclick="buy('Deadly+')">Buy</button>
-    </div>
-
-    <div class="card">
-      <h3>Deadly</h3>
-      <p>₹249</p>
-      <button onclick="buy('Deadly')">Buy</button>
-    </div>
-
-    <div class="card">
-      <h3>DeadLiest</h3>
-      <p>₹199</p>
-      <button onclick="buy('DeadLiest')">Buy</button>
-    </div>
-
-    <div class="card">
-      <h3>Immortal</h3>
-      <p>₹199</p>
-      <button onclick="buy('Immortal')">Buy</button>
-    </div>
-
-    <div class="card">
-      <h3>Elite</h3>
-      <p>₹79</p>
-      <button onclick="buy('Elite')">Buy</button>
-    </div>
-
-    <div class="card">
-      <h3>Ace</h3>
-      <p>₹99</p>
-      <button onclick="buy('Ace')">Buy</button>
-    </div>
+    <div class="card highlight"><h3>Deadly+</h3><p>₹699</p><button onclick="buy('Deadly+')">Buy</button></div>
+    <div class="card"><h3>Deadly</h3><p>₹249</p><button onclick="buy('Deadly')">Buy</button></div>
+    <div class="card"><h3>DeadLiest</h3><p>₹199</p><button onclick="buy('DeadLiest')">Buy</button></div>
+    <div class="card"><h3>Immortal</h3><p>₹199</p><button onclick="buy('Immortal')">Buy</button></div>
+    <div class="card"><h3>Elite</h3><p>₹79</p><button onclick="buy('Elite')">Buy</button></div>
+    <div class="card"><h3>Ace</h3><p>₹99</p><button onclick="buy('Ace')">Buy</button></div>
 
   </div>
 </section>
 
-<!-- KEYS SAME -->
+<!-- KEYS -->
 <section id="keys" class="section">
+  <div id="particles-keys"></div>
+
   <h2>Keys</h2>
 
   <div class="card-container">
     <div class="card"><h3>Epic Key x4</h3><p>₹39</p><button onclick="buy('Epic Key')">Buy</button></div>
-    <div class="card"><h3>Spawner Key x4</h3><p>₹49</p><button onclick="buy('Muffin Key')">Buy</button></div>
+    <div class="card"><h3>Spawner Key x4</h3><p>₹49</p><button onclick="buy('Spawner Key')">Buy</button></div>
     <div class="card"><h3>Cosmic Key x4</h3><p>₹69</p><button onclick="buy('Cosmic Key')">Buy</button></div>
     <div class="card"><h3>Crimson Key x4</h3><p>₹119</p><button onclick="buy('Crimson Key')">Buy</button></div>
   </div>
@@ -165,22 +137,24 @@
   </div>
 </div>
 
-<!-- PARTICLES LIB -->
+<!-- PARTICLES -->
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
 <script>
 particlesJS("particles-js", {
-  particles: {
-    number: { value: 50 },
-    color: { value: "#ff003c" },
-    shape: { type: "circle" },
-    size: { value: 3 },
-    move: { enable: true, speed: 2 }
-  }
+  particles: { number:{value:50}, color:{value:"#ff003c"}, size:{value:3}, move:{enable:true,speed:2} }
+});
+
+particlesJS("particles-ranks", {
+  particles: { number:{value:30}, color:{value:"#00ffff"}, size:{value:2}, move:{enable:true,speed:1} }
+});
+
+particlesJS("particles-keys", {
+  particles: { number:{value:30}, color:{value:"#ff9900"}, size:{value:2}, move:{enable:true,speed:1} }
 });
 </script>
 
-<!-- MAIN JS -->
+<!-- JS -->
 <script>
 function scrollToSection(id) {
   document.getElementById(id).scrollIntoView({ behavior: "smooth" });
@@ -188,7 +162,8 @@ function scrollToSection(id) {
 
 function buy(item) {
   document.getElementById("modal").classList.remove("hidden");
-  document.getElementById("modal-title").innerText = item;
+  document.getElementById("modal-title").innerText =
+    item + "\n\nGo to Discord → Support → Make Ticket → Talk with staff.";
 }
 
 function closeModal() {
@@ -196,12 +171,12 @@ function closeModal() {
 }
 
 function payNow() {
-  alert("Redirecting...");
+  alert("Go to Discord and create ticket!");
 }
 
 function paymentDone() {
   document.getElementById("payment-msg").innerText =
-    "✅ If you need to buy Stuf/Ranks/Gear.Go to support and Make ticket and talk with staff.";
+    "✅ Go to Discord → Make ticket → Talk with staff.";
 }
 
 function openDiscord() {

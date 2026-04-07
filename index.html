@@ -15,6 +15,45 @@
 <link rel="stylesheet" href="css/cards.css">
 <link rel="stylesheet" href="css/modal.css">
 
+<style>
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+              url('https://w.wallhaven.cc/full/7j/wallhaven-7jwrp3.jpg') center/cover no-repeat;
+}
+
+/* PARTICLES */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.hero h2, .hero p, .hero button {
+  position: relative;
+  z-index: 2;
+}
+
+/* ANIMATION */
+.hero h2 {
+  font-size: 50px;
+  animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(20px);}
+  to {opacity:1; transform:translateY(0);}
+}
+</style>
+
 </head>
 <body>
 
@@ -25,9 +64,15 @@
 
 <!-- HERO -->
 <section class="hero">
+
+  <div id="particles-js"></div>
+
   <h2>Welcome to DeadlyMC</h2>
   <p>Best Minecraft Server Store</p>
-  <button onclick="scrollToSection('ranks')">Shop Now</button>
+  <button onclick="scrollToSection('ranks')" class="mt-4 px-6 py-2 bg-red-600">
+    Shop Now
+  </button>
+
 </section>
 
 <!-- RANKS -->
@@ -35,14 +80,47 @@
   <h2>Ranks</h2>
 
   <div class="card-container">
-    <div class="card"><h3>Eternal</h3><p>₹149/month</p><button onclick="buy('Eternal')">Buy</button></div>
-    <div class="card"><h3>Titan</h3><p>₹279/month</p><button onclick="buy('Titan')">Buy</button></div>
-    <div class="card"><h3>Deadly</h3><p>₹379/month</p><button onclick="buy('Deadly')">Buy</button></div>
-    <div class="card highlight"><h3>Deadly+</h3><p>₹699/month</p><button onclick="buy('Deadly+')">Buy</button></div>
+
+    <div class="card highlight">
+      <h3>Deadly+</h3>
+      <p>₹699</p>
+      <button onclick="buy('Deadly+')">Buy</button>
+    </div>
+
+    <div class="card">
+      <h3>Deadly</h3>
+      <p>₹249</p>
+      <button onclick="buy('Deadly')">Buy</button>
+    </div>
+
+    <div class="card">
+      <h3>DeadLiest</h3>
+      <p>₹199</p>
+      <button onclick="buy('DeadLiest')">Buy</button>
+    </div>
+
+    <div class="card">
+      <h3>Immortal</h3>
+      <p>₹199</p>
+      <button onclick="buy('Immortal')">Buy</button>
+    </div>
+
+    <div class="card">
+      <h3>Elite</h3>
+      <p>₹79</p>
+      <button onclick="buy('Elite')">Buy</button>
+    </div>
+
+    <div class="card">
+      <h3>Ace</h3>
+      <p>₹99</p>
+      <button onclick="buy('Ace')">Buy</button>
+    </div>
+
   </div>
 </section>
 
-<!-- KEYS -->
+<!-- KEYS SAME -->
 <section id="keys" class="section">
   <h2>Keys</h2>
 
@@ -56,30 +134,25 @@
 
 <!-- PAYMENT -->
 <section class="section text-center">
-  <h2>💳 Pay</h2>
+  <h2>PAY</h2>
 
-  <img src="assets/payment-qr.png" class="qr" alt="QR">
+  <img src="assets/payment-qr.png" class="qr">
 
   <br><br>
 
   <button onclick="paymentDone()" class="px-4 py-2 bg-green-600">
-    I Have Paid
+    • PURCHASE!!
   </button>
 
-  <p id="payment-msg" style="margin-top:10px;"></p>
+  <p id="payment-msg"></p>
 
   <br><br>
 
-  <!-- DISCORD -->
-  <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
-    
+  <div style="display:flex; flex-direction:column; align-items:center;">
     <img src="https://img.freepik.com/premium-psd/social-media-day-png-highquality-transparent-icons-popular-apps_1093584-372.jpg"
          width="60"
-         style="cursor:pointer;"
          onclick="openDiscord()">
-
-    <p>Join Discord</p>
-
+    <p>DISCORD SERVER</p>
   </div>
 </section>
 
@@ -92,10 +165,22 @@
   </div>
 </div>
 
-<!-- JS -->
-<script src="js/main.js"></script>
+<!-- PARTICLES LIB -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
-<!-- 🔥 FIXED JS (IMPORTANT) -->
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 50 },
+    color: { value: "#ff003c" },
+    shape: { type: "circle" },
+    size: { value: 3 },
+    move: { enable: true, speed: 2 }
+  }
+});
+</script>
+
+<!-- MAIN JS -->
 <script>
 function scrollToSection(id) {
   document.getElementById(id).scrollIntoView({ behavior: "smooth" });
@@ -111,12 +196,12 @@ function closeModal() {
 }
 
 function payNow() {
-  alert("Redirecting to payment...");
+  alert("Redirecting...");
 }
 
 function paymentDone() {
   document.getElementById("payment-msg").innerText =
-    "✅ Payment done! Make ticket in Discord.";
+    "✅ Make ticket in Discord For Buy Stuff..";
 }
 
 function openDiscord() {

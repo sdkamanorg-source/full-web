@@ -1,55 +1,35 @@
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
 
-/* SIMPLE CLEAN CARD */
+/* CARD */
 .card {
-  background: #111;
+  background: rgba(20,20,20,0.8);
   padding: 20px;
-  width: 220px;
   border-radius: 12px;
   text-align: center;
   transition: 0.3s;
   border: 1px solid rgba(255,255,255,0.08);
 }
 
-/* HOVER (LIGHT GLOW ONLY) */
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 15px rgba(255, 0, 60, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(255,0,60,0.4);
 }
 
-/* TEXT */
-.card h3 {
-  font-size: 20px;
-  margin-bottom: 8px;
-}
-
-.card p {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: #ccc;
-}
-
-/* BUTTON */
 .card button {
-  padding: 8px 14px;
-  background: #ff003c;
+  margin-top: 10px;
+  padding: 10px;
+  background: red;
   border: none;
   color: white;
-  border-radius: 6px;
-  cursor: pointer;
+  width: 100%;
 }
 
-.card button:hover {
-  background: crimson;
-}
-
-/* 🔥 BEST CARD */
+/* BEST */
 .highlight {
   border: 2px solid gold;
-  box-shadow: 0 0 12px gold;
+  box-shadow: 0 0 10px gold;
 }

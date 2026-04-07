@@ -1,14 +1,17 @@
 body {
-  background: #0a0a0a;
+  background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)),
+              url('https://w.wallhaven.cc/full/ml/wallhaven-mlw2l9.jpg') center/cover no-repeat fixed;
   color: white;
   font-family: 'VT323', monospace;
 }
 
+/* Logo */
 .logo {
   color: #ff003c;
   font-size: 28px;
 }
 
+/* Sections */
 .section {
   padding: 60px;
   text-align: center;

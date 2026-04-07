@@ -13,9 +13,21 @@
 
 <!-- CUSTOM CSS -->
 <link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="css/hero.css">
 <link rel="stylesheet" href="css/cards.css">
 <link rel="stylesheet" href="css/modal.css">
+
+<style>
+/* 🔥 FORCE HERO BACKGROUND FIX */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+              url('https://w.wallhaven.cc/full/7j/wallhaven-7jwrp3.jpg') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+</style>
 
 </head>
 <body>
@@ -27,10 +39,10 @@
 </header>
 
 <!-- HERO -->
-<section class="hero">
-  <h2>Welcome to DeadlyMC</h2>
+<section class="hero text-center">
+  <h2 class="text-5xl">Welcome to DeadlyMC</h2>
   <p>Best Minecraft Server Store</p>
-  <button onclick="scrollToSection('ranks')">Shop Now</button>
+  <button onclick="scrollToSection('ranks')" class="mt-4 px-6 py-2 bg-red-600">Shop Now</button>
 </section>
 
 <!-- RANKS -->
@@ -97,6 +109,29 @@
   </div>
 </section>
 
+<!-- 💳 PAYMENT QR SECTION -->
+<section class="section">
+  <h2>💳 Scan & Pay</h2>
+
+  <!-- 👇 QR IMAGE (PUT YOUR IMAGE IN assets folder) -->
+  <img src="assets/payment-qr.png" width="200">
+
+  <br><br>
+
+  <button onclick="paymentDone()">I Have Paid</button>
+
+  <p id="payment-msg"></p>
+
+  <!-- DISCORD ICON -->
+  <br><br>
+  <img src="https://img.freepik.com/premium-psd/social-media-day-png-highquality-transparent-icons-popular-apps_1093584-372.jpg"
+       width="60"
+       style="cursor:pointer;"
+       onclick="openDiscord()">
+
+  <p>Click icon to join Discord</p>
+</section>
+
 <!-- MODAL -->
 <div id="modal" class="modal hidden">
   <div class="modal-content">
@@ -109,6 +144,17 @@
 <script src="js/main.js"></script>
 <script src="js/checkout.js"></script>
 <script src="js/responsive.js"></script>
+
+<script>
+function paymentDone() {
+  document.getElementById("payment-msg").innerText =
+    "✅ Your payment is done! Make ticket in Discord.";
+}
+
+function openDiscord() {
+  window.open("https://discord.gg/UBP4c7WyJ", "_blank");
+}
+</script>
 
 </body>
 </html>

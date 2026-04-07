@@ -1,20 +1,83 @@
+/* BACKGROUND OVERLAY */
 .modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+
   background: rgba(0,0,0,0.8);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
 }
 
+/* MODAL BOX */
 .modal-content {
   background: #111;
-  padding: 20px;
-  margin: 15% auto;
-  width: 300px;
+  padding: 25px;
+  width: 320px;
+
+  border-radius: 10px;
   text-align: center;
+
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  animation: pop 0.3s ease;
 }
 
+/* TEXT */
+.modal-content h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+/* BUTTONS */
+.modal-content button {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  padding: 10px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: red;
+  color: white;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.modal-content button:hover {
+  background: crimson;
+}
+
+/* CLOSE BUTTON DIFFERENT COLOR */
+.modal-content button:last-child {
+  background: #444;
+}
+
+.modal-content button:last-child:hover {
+  background: #666;
+}
+
+/* HIDE */
 .hidden {
   display: none;
+}
+
+/* POP ANIMATION */
+@keyframes pop {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

@@ -55,18 +55,31 @@
 </section>
 
 <!-- PAYMENT -->
-<section class="section">
+<section class="section text-center">
   <h2>💳 Pay</h2>
 
-  <img src="assets/payment-qr.png" class="qr">
+  <img src="assets/payment-qr.png" class="qr" alt="QR">
 
-  <button onclick="paymentDone()">I Have Paid</button>
-  <p id="payment-msg"></p>
+  <br><br>
 
-  <div class="discord">
+  <button onclick="paymentDone()" class="px-4 py-2 bg-green-600">
+    I Have Paid
+  </button>
+
+  <p id="payment-msg" style="margin-top:10px;"></p>
+
+  <br><br>
+
+  <!-- DISCORD -->
+  <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+    
     <img src="https://img.freepik.com/premium-psd/social-media-day-png-highquality-transparent-icons-popular-apps_1093584-372.jpg"
+         width="60"
+         style="cursor:pointer;"
          onclick="openDiscord()">
+
     <p>Join Discord</p>
+
   </div>
 </section>
 
@@ -79,7 +92,37 @@
   </div>
 </div>
 
+<!-- JS -->
 <script src="js/main.js"></script>
+
+<!-- 🔥 FIXED JS (IMPORTANT) -->
+<script>
+function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+}
+
+function buy(item) {
+  document.getElementById("modal").classList.remove("hidden");
+  document.getElementById("modal-title").innerText = item;
+}
+
+function closeModal() {
+  document.getElementById("modal").classList.add("hidden");
+}
+
+function payNow() {
+  alert("Redirecting to payment...");
+}
+
+function paymentDone() {
+  document.getElementById("payment-msg").innerText =
+    "✅ Payment done! Make ticket in Discord.";
+}
+
+function openDiscord() {
+  window.open("https://discord.gg/HDpkv4N4", "_blank");
+}
+</script>
 
 </body>
 </html>

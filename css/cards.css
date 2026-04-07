@@ -1,35 +1,17 @@
-.card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-/* CARD */
-.card {
-  background: rgba(20,20,20,0.8);
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  transition: 0.3s;
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px rgba(255,0,60,0.4);
-}
-
 .card button {
   margin-top: 10px;
-  padding: 10px;
-  background: red;
+  padding: 12px;
+  width: 100%;
+  border-radius: 8px;
   border: none;
   color: white;
-  width: 100%;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff003c, #ff4d6d);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* BEST */
-.highlight {
-  border: 2px solid gold;
-  box-shadow: 0 0 10px gold;
+.card button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px rgba(255,0,60,0.7);
 }

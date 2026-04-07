@@ -1,69 +1,119 @@
+/* GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY BACKGROUND */
 body {
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)),
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.65)),
               url('https://w.wallhaven.cc/full/ml/wallhaven-mlw2l9.jpg') center/cover no-repeat fixed;
   color: white;
   font-family: 'VT323', monospace;
+  min-height: 100vh;
 }
 
+/* LOGO */
 .logo {
   color: #ff003c;
   font-size: 28px;
+  letter-spacing: 1px;
 }
 
-/* HERO */
+/* HERO SECTION */
 .hero {
   height: 100vh;
+  width: 100%;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
+  text-align: center;
+
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
               url('https://w.wallhaven.cc/full/7j/wallhaven-7jwrp3.jpg') center/cover no-repeat;
 }
 
+/* HERO TEXT */
 .hero h2 {
   font-size: 50px;
+  margin-bottom: 10px;
 }
 
+.hero p {
+  opacity: 0.8;
+}
+
+/* HERO BUTTON */
 .hero button {
   margin-top: 20px;
   padding: 10px 20px;
   background: red;
   border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.hero button:hover {
+  background: crimson;
 }
 
 /* SECTION */
 .section {
-  padding: 60px;
+  padding: 60px 20px;
   text-align: center;
 }
 
-/* PAYMENT */
+/* SECTION TITLE */
+.section h2 {
+  font-size: 32px;
+  margin-bottom: 25px;
+}
+
+/* PAYMENT QR */
 .qr {
   width: 200px;
+  display: block;
   margin: 20px auto;
 }
 
+/* DISCORD */
 .discord {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 8px;
   margin-top: 20px;
 }
 
 .discord img {
   width: 60px;
   cursor: pointer;
+  transition: 0.2s;
 }
 
-/* MOBILE */
+.discord img:hover {
+  transform: scale(1.1);
+}
+
+/* MOBILE FIX */
 @media (max-width: 768px) {
+
   .hero h2 {
     font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 14px;
   }
 
   .section {
     padding: 30px 15px;
   }
+
 }

@@ -5,14 +5,20 @@ body {
   font-family: 'VT323', monospace;
 }
 
-/* Logo */
 .logo {
   color: #ff003c;
   font-size: 28px;
 }
 
-/* Sections */
+/* SECTION */
 .section {
   padding: 60px;
   text-align: center;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .section {
+    padding: 30px 15px;
+  }
 }

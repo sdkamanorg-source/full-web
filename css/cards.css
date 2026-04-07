@@ -2,39 +2,54 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 25px;
+  gap: 20px;
 }
 
+/* SIMPLE CLEAN CARD */
 .card {
-  background: #0a0a0a;
-  padding: 25px;
-  width: 240px;
-  border-radius: 15px;
+  background: #111;
+  padding: 20px;
+  width: 220px;
+  border-radius: 12px;
   text-align: center;
   transition: 0.3s;
-
-  border: 2px solid transparent;
-  background-image: linear-gradient(#0a0a0a, #0a0a0a),
-                    linear-gradient(90deg, cyan, red);
-  background-origin: border-box;
-  background-clip: content-box, border-box;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
+/* HOVER (LIGHT GLOW ONLY) */
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 25px rgba(255, 0, 60, 0.5);
+  transform: translateY(-6px);
+  box-shadow: 0 0 15px rgba(255, 0, 60, 0.4);
 }
 
+/* TEXT */
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+/* BUTTON */
 .card button {
-  margin-top: 10px;
-  padding: 10px;
-  background: red;
-  color: white;
+  padding: 8px 14px;
+  background: #ff003c;
   border: none;
-  border-radius: 5px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
+.card button:hover {
+  background: crimson;
+}
+
+/* 🔥 BEST CARD */
 .highlight {
   border: 2px solid gold;
-  box-shadow: 0 0 20px gold;
+  box-shadow: 0 0 12px gold;
 }

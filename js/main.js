@@ -4,24 +4,35 @@ function scrollToSection(id) {
   });
 }
 
+/* BUY CLICK */
 function buy(item) {
-  document.getElementById("modal").classList.remove("hidden");
-  document.getElementById("modal-title").innerText = item;
+  const modal = document.getElementById("modal");
+  const title = document.getElementById("modal-title");
+
+  modal.classList.remove("hidden");
+
+  title.innerText =
+    item +
+    "\n\nIf you need to buy Stuff/Ranks/Gear.\nGo to Discord → Make ticket → Talk with staff.";
 }
 
+/* CLOSE MODAL */
 function closeModal() {
   document.getElementById("modal").classList.add("hidden");
 }
 
+/* REMOVE PAYMENT REDIRECT */
 function payNow() {
-  window.open("https://your-payment-link.com", "_blank");
+  alert("Go to Discord → Make ticket");
 }
 
+/* PAYMENT MESSAGE */
 function paymentDone() {
   document.getElementById("payment-msg").innerText =
-    "✅ Make ticket in Discord!";
+    "✅ Go to Discord → Make ticket → Talk with staff.";
 }
 
+/* DISCORD OPEN */
 function openDiscord() {
   window.open("https://discord.gg/HDpkv4N4", "_blank");
 }

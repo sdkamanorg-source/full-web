@@ -5,72 +5,35 @@
   gap: 25px;
 }
 
-/* 🔥 MAIN CARD STYLE */
 .card {
-  background: linear-gradient(145deg, #0a0a0a, #111);
+  background: #0a0a0a;
   padding: 25px;
   width: 240px;
   border-radius: 15px;
-  position: relative;
-  overflow: hidden;
+  text-align: center;
   transition: 0.3s;
-  border: 1px solid rgba(255,255,255,0.1);
-}
 
-/* 🔥 GLOW BORDER EFFECT */
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 15px;
-  padding: 2px;
-  background: linear-gradient(90deg, red, purple, blue);
-  -webkit-mask: 
-    linear-gradient(#000 0 0) content-box, 
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: 0.3s;
-}
-
-/* 🔥 HOVER EFFECT */
-.card:hover::before {
-  opacity: 1;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#0a0a0a, #0a0a0a),
+                    linear-gradient(90deg, cyan, red);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
 }
 
 .card:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 0 25px rgba(255,0,60,0.4);
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(255, 0, 60, 0.5);
 }
 
-/* TEXT STYLE */
-.card h3 {
-  font-size: 22px;
-  color: #fff;
-}
-
-.card p {
-  font-size: 20px;
-  margin: 10px 0;
-}
-
-/* BUTTON */
 .card button {
   margin-top: 10px;
-  padding: 10px 15px;
-  background: linear-gradient(90deg, red, darkred);
-  border: none;
+  padding: 10px;
+  background: red;
   color: white;
-  border-radius: 6px;
-  cursor: pointer;
+  border: none;
+  border-radius: 5px;
 }
 
-.card button:hover {
-  background: crimson;
-}
-
-/* 🔥 SPECIAL CARD (Deadly+) */
 .highlight {
   border: 2px solid gold;
   box-shadow: 0 0 20px gold;
